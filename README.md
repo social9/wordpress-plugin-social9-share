@@ -1,1 +1,0 @@
-# wordpress-plugin-social9-share
