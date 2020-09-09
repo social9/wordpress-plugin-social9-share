@@ -12,7 +12,7 @@ if (!class_exists('S9_Sharing_Install')) {
     class S9_Sharing_Install {
 
         private static $options = array(
-            'connecting_key' => ''
+            'interface_script' => ''
         );
 
         /**
@@ -43,18 +43,14 @@ if (!class_exists('S9_Sharing_Install')) {
          * Add stylesheet and JavaScript to admin section.
          */
         public function share_add_stylesheet($hook) {
-            if ($hook != 'oss_page_social9_share' && $hook != 'toplevel_page_social9_share') {
-                return;
-            }
             wp_enqueue_style('oss_sharing_style', plugins_url('/assets/css/s9-social-sharing-admin.css', __FILE__));
-            wp_enqueue_script('oss_share_admin_javascript', plugins_url('/assets/js/oss_sharing_admin.js', __FILE__), array('jquery', 'jquery-ui-sortable', 'jquery-ui-mouse', 'jquery-touch-punch'), false, true);
+            wp_enqueue_script('oss_share_admin_javascript', plugins_url('/assets/js/social9_sharing_admin.js', __FILE__), array('jquery'), false, true);
         }
 
         /**
          * Add stylesheet and JavaScript to client sections
          */
         public function enqueue_share_scripts() {
-            wp_enqueue_script('oss_javascript_init', plugins_url('/assets/js/oss_sharing.js', __FILE__), array('jquery'), '1.0.0');
             wp_enqueue_script('s9-social-sharing');
         }
 

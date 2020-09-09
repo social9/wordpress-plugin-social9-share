@@ -85,13 +85,23 @@ if (!class_exists('S9_Social_Sharing')) {
          */
         function social9_front_script($tag, $handle, $src)
         {
-            global $oss_share_settings;
+            global $post, $oss_share_settings;
 
             $oss_share_settings = get_option('Social9_share_settings');
             if ('s9-sdk' != $handle) {
                 return $tag;
             }
-            return str_replace(array('<script', "s9-sdk-js"), array('<script async defer content="' . $oss_share_settings['connecting_key'] . '"', "s9-sdk"), $tag);
+            $output = urldecode($oss_share_settings['interface_script']);
+            if(is_front_page() && (!isset($oss_share_settings['s9-clicker-vr-home']) || $oss_share_settings['s9-clicker-vr-home'] != "1")){
+                $output = str_replace(array("id="), array("data-hide-float='true' id="), $output);
+            }else if ( is_single() && $post->post_type == 'post' && (!isset($oss_share_settings['s9-clicker-vr-post']) || $oss_share_settings['s9-clicker-vr-post'] != '1' )) {
+                $output = str_replace(array("id="), array("data-hide-float='true' id="), $output);
+            }else if ( is_page() && (!isset($oss_share_settings['s9-clicker-vr-static']) || $oss_share_settings['s9-clicker-vr-static'] != '1' )) {
+                $output = str_replace(array("id="), array("data-hide-float='true' id="), $output);
+            }else if(is_single() && $post->post_type != 'post' && (!isset($oss_share_settings['s9-clicker-vr-custom']) || $oss_share_settings['s9-clicker-vr-custom'] != "1")){
+                $output = str_replace(array("id="), array("data-hide-float='true' id="), $output);
+            }
+            return $output;
         }
 
 
@@ -105,6 +115,7 @@ if (!class_exists('S9_Social_Sharing')) {
             // Load Social9 files.
             require_once(S9_SHARE_PLUGIN_DIR . 'admin/s9-social-share-admin.php');
             require_once(S9_SHARE_PLUGIN_DIR . 'includes/shortcode/shortcode.php');
+            require_once(S9_SHARE_PLUGIN_DIR . 'includes/inline/inline.php');
         }
     }
 

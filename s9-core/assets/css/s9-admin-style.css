@@ -217,7 +217,7 @@ Inputs
 
 #s9_options_tabs {
 	float: left;
-	width: 66.12903225806451%;
+	width: 100%;
 }
 
 .s9-options-tab-btns {
@@ -494,7 +494,6 @@ label.s9-sharing-cb {
 
 .s9-frame {
 	background: #fff;
-	border: 1px solid #eee;
 	margin-bottom: 30px;
 }
 

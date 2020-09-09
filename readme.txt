@@ -4,7 +4,7 @@ Donate link: https://www.social9.com/
 Tags: Social share, WordPress plugin, BuddyPress, bbpress, social sharing, multisite, Social9, share post, sharing, share, single share, Social share Plug-in, Twitter tweet, Google plus share, Yahoo share, OpenID, Linkedin share, social media tools, free social sharing, post to social networks, social authentication, social api, social app, facebook share, google share, wordpress multisite, social plugins
 Requires at least: 3.4
 Tested up to: 5.4.2
-Stable tag: 5.0
+Stable tag: 5.1
 Requires PHP: 5.6
 License: GPLv2 or later
 
@@ -146,8 +146,15 @@ Simplified Social Sharing plugin is available only in english at this time. Plea
 
 == Changelog ==
 
+= 5.1 =
+* Added Inline Widget.
+-- Added Pages Selection Options
+-- Added Position Selection Options 
+* Added Floating Widget.
+-- Added Pages Selection Options
+
 = 5.0 =
- -- implemented New Easy UI design.
+-- implemented New Easy UI design.
  
 = 4.2 =
 -- Minor bug fix.
@@ -369,3 +376,10 @@ Simplified Social Sharing plugin is available only in english at this time. Plea
 
 = 5.0 =
  -- implemented New Easy UI design
+ 
+= 5.1 =
+* Added Inline Widget.
+-- Added Pages Selection Options
+-- Added Position Selection Options 
+* Added Floating Widget.
+-- Added Pages Selection Options

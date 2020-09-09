@@ -4,7 +4,7 @@
  * Plugin Name: Simplified Social Share
  * Plugin URI: http://www.social9.com
  * Description: Social9 social sharing plugin provides you beautiful buttons, sharing capabilities, and analytics. (20+ buttons- Whatsapp, Facebook, Twitter, LinkedIn, Reddit, and many more...)
- * Version: 5.0
+ * Version: 5.1
  * Author: Social9 Team
  * Author URI: http://www.social9.com
  * License: GPL2+
